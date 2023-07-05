@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumit Singh - Software Engineer, Data Analyst </title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/45daf6a986.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">   
@@ -37,12 +38,80 @@
                     <h1 class='sub-title'>About Me</h1>
                     <p>
                         As a data analyst, I have a passion for exploring and uncovering valuable insights from complex datasets. I specialize in translating raw data into meaningful information that drives strategic decision-making and business growth. With a strong analytical mindset and a keen eye for detail, I excel in identifying patterns, trends, and correlations to deliver actionable recommendations.
-
                     </p>
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links"onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links"onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contains active-tab" id="skills">
+                        <ul>
+                            <li><span>Data Analytics</span><br>Get the insights from the large datasets</li>
+                            <li><span>Data Science</span><br>Python, R, Tableau, Power Bi, AWS, ML, Statiscs</li>
+                            <li><span>Automation Testing</span><br>Selenium webdriver, ALM, JIRA, Postman, JAVA, GitHub</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contains" id='Experience'>
+                        <ul>
+                           <li><span>2021-2023</span><br>Automation expert at Cognizant Technology Solutions</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contains" id="Education">
+                        <ul>
+                            <li><span>B.tech(2017-2021)</span><br>Compute Science and Engineering (7.58 CGPA)</li>
+                            <li><span>12th(2015-2016)</span><br>PCM 68.8%</li>
+                            <li><span>10th(2013-2014)</span><br>9.2CGPA</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
+    <!--------------------------services--------------------------------->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <h2>Data Analyst</h2>
+                    <p>Done many complex data analysis projects including e-commerce inventory stock according to the customer behavior</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Data Science</h2>
+                    <p>I have used my Data Science skils to build a model which can predict the stock prices.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-robot"></i>
+                    <h2>Automation Testing</h2>
+                    <p>In order to make human work easier and fast i developed scripts to automate the website testing process</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-----------------------portfolio-------------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+    </div>
+</div>
+<script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontais=document.getElementsByClassName("tab-contains");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontais){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
 </body>
 </html>
