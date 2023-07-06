@@ -143,7 +143,7 @@
                 <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contact-right"></div>
-            <form >
+            <form name="submit-to-google-sheet">
                 <input type="text" name="Name" placeholder="Your Name" required>
                 <input type="email" name="Email" placeholder="Your Email" required>
                 <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
@@ -183,7 +183,7 @@
     }
 </script>
 <script>
-    const scriptURL = '<SCRIPT URL>'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyEOGeP6ozdU5I0MAOjKw700soCSOmvjDB-vHzZX2FkqwF1m7Jk2V3knI22M9C_VvTgag/exec'
     const form = document.forms['submit-to-google-sheet']
   
     form.addEventListener('submit', e => {
