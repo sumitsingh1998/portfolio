@@ -137,18 +137,20 @@
                 <p><i class="fa-solid fa-paper-plane"></i>sumitbhadauriya1997.sb@gmail.com</p>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/sumit-singh-487623197"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.linkedin.com/in/sumit-singh-487623197"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/sumit-singh-487623197"><i class="fa-brands fa-instagram"></i></i></a>
+                    <a href="https://github.com/sumitsingh1998"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/sumit_bhadauriya1/"><i class="fa-brands fa-instagram"></i></i></a>
                 </div>
                 <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
             </div>
-            <div class="contact-right"></div>
+            <div class="contact-right">
             <form name="submit-to-google-sheet">
                 <input type="text" name="Name" placeholder="Your Name" required>
                 <input type="email" name="Email" placeholder="Your Email" required>
                 <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                 <button type="submit" class="btn btn2">Submit</button>
             </form>
+            <span id="msg"></span>
+        </div>
         </div>
     </div>
     <div class="copyright">
@@ -185,11 +187,17 @@
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyEOGeP6ozdU5I0MAOjKw700soCSOmvjDB-vHzZX2FkqwF1m7Jk2V3knI22M9C_VvTgag/exec'
     const form = document.forms['submit-to-google-sheet']
-  
+    const msg=document.getElementById("msg")
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
+        .then(response => {
+            msg.innerHTML="Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
         .catch(error => console.error('Error!', error.message))
     })
   </script>
